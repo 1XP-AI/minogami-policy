@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 — Minogami</title>
+<meta name="description" content="Minogami(Android·iOS)의 개인정보처리방침: 기기에 남는 데이터, 사용자 본인의 API 키로 Gemini·OpenAI에 보내는 텍스트, 카메라·사진 접근.">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0 auto; max-width:44rem; padding:2.5rem 1.25rem 5rem;
+         font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+         color:#1a1a1c; background:#fff; word-break:keep-all; }
+  h1 { font-size:1.7rem; line-height:1.35; margin:0 0 .5rem; letter-spacing:-.02em; }
+  h2 { font-size:1.15rem; margin:2.5rem 0 .6rem; letter-spacing:-.01em; }
+  p, li { margin:.6rem 0; }
+  ul { padding-left:1.2rem; }
+  code { background:rgba(127,127,127,.14); padding:.1em .35em; border-radius:4px; font-size:.9em; }
+  em { color:#666; font-style:normal; font-size:.92rem; }
+  a { color:#2b6cd4; overflow-wrap:anywhere; }
+  hr { border:0; border-top:1px solid rgba(127,127,127,.25); margin:2.5rem 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color:#e9e9ec; background:#121214; }
+    em { color:#9a9aa2; } a { color:#7fb0ff; }
+  }
+</style>
+</head>
+<body>
+<h1>개인정보처리방침 — Minogami</h1>
+<p><em>최종 수정일: 2026-11-15 · 적용 대상: Minogami Android 앱, Minogami iOS 앱</em></p>
+<p>Minogami(&quot;이 앱&quot;)는 영어 원서를 읽는 것을 돕는 앱입니다. 책 페이지를 촬영하면 기기 안에서 글자를 읽어 내고, 읽기 수준에 맞는 어려운 단어·숙어·문법 포인트를 골라, 사진 위에 형광펜 표시와 짧은 뜻 메모로 보여 줍니다. 이 방침은 그 과정에서 여러분의 데이터에 무슨 일이 일어나는지 설명합니다.</p>
+<p>요약하면: <strong>저희는 서버를 운영하지 않고, 계정도 광고도 분석 도구도 없습니다.</strong> 사진은 기기를 떠나지 않습니다. 단어 뜻 분석을 위해 페이지에서 읽어 낸 <strong>텍스트</strong>만, 여러분이 고른 AI 제공자(Google Gemini API 또는 OpenAI API)에 <strong>여러분 자신의 API 키</strong>로 직접 전송됩니다.</p>
+
+<h2>만든 곳</h2>
+<p>이 앱은 1XP Inc.가 만들었습니다. 여러분의 콘텐츠를 받는 백엔드 서버를 운영하지 않으며, 회원가입·로그인 같은 계정 시스템이 없습니다.</p>
+
+<h2>기기에만 저장되는 것</h2>
+<p>다음은 <strong>여러분의 기기에만</strong> 저장되며, 저희에게 전송되지 않습니다.</p>
+<ul>
+<li><strong>API 키(Gemini, OpenAI)</strong> — Android에서는 Android Keystore가 관리하는 키로 암호화(AES-GCM)되어 앱 전용 저장소에, iOS에서는 키체인(Keychain)에 보관됩니다. 키는 해당 제공자의 API를 호출할 때만, 그 제공자에게만 전송됩니다.</li>
+<li><strong>앱 설정</strong> — 읽기 수준, 뜻을 적을 언어, 선택한 분석 제공자와 모델.</li>
+<li><strong>진단 기록</strong> — 페이지마다 처리 단계별 소요 시간과 실패 사유(예: 제공자가 응답하지 않은 이유)를 남기는 기록입니다. API 키는 기록하지 않습니다. 여러분이 설정에서 <strong>&quot;Export Diagnostics(진단 내보내기)&quot;</strong>를 눌러 직접 공유할 때만 기기 밖으로 나가며, 어디로 보낼지는 여러분이 고릅니다. 설정에서 언제든 지울 수 있습니다.</li>
+</ul>
+<p>촬영하거나 고른 <strong>사진은 분석하는 동안 메모리에서만</strong> 쓰이고, 앱이 따로 파일로 저장하거나 어디로도 전송하지 않습니다. 앱을 삭제하면 위 데이터는 모두 함께 사라집니다.</p>
+
+<h2>기기 안에서만 처리되는 것</h2>
+<ul>
+<li><strong>글자 인식(OCR)</strong> — Android에서는 앱에 포함된 Google ML Kit 글자 인식 모델로, iOS에서는 Apple의 Vision 프레임워크로 기기 안에서 수행합니다. 사진은 이 과정에서 기기를 떠나지 않습니다.</li>
+<li><strong>단어 난이도 판단</strong> — 앱에 포함된 단어 학년 데이터로 기기 안에서 판단합니다.</li>
+</ul>
+
+<h2>AI 제공자(Gemini 또는 OpenAI)로 전송되는 것</h2>
+<p>단어 뜻·숙어·문법 설명을 만들기 위해, 이 앱은 설정에서 여러분이 고른 <strong>하나의 제공자</strong>에게만 다음을 전송합니다. 인증에는 <strong>여러분 자신의 API 키</strong>를 사용합니다. 이것은 여러분의 기기와 제공자 사이의 직접 연결(HTTPS로 암호화)이며, 저희 서버를 거치지 않고 저희는 그 내용을 받지 않습니다.</p>
+<ul>
+<li>페이지에서 읽어 낸 <strong>문장 텍스트</strong>와 그중 뜻을 알려 줄 <strong>후보 단어</strong>(각 단어가 나온 문장 포함)</li>
+<li>설정한 <strong>읽기 수준</strong>과 <strong>뜻을 적을 언어</strong>(요청 문구에 포함됨)</li>
+</ul>
+<p><strong>사진(이미지) 자체는 전송하지 않습니다.</strong> 이름·이메일·위치 같은 개인정보도 보내지 않습니다. 다만 촬영한 페이지에 적힌 글자는 그대로 전송되므로, 개인적인 메모나 민감한 내용이 적힌 페이지는 촬영하지 않는 것을 권합니다.</p>
+<p>전송된 데이터는 각 제공자가 <strong>자신의 개인정보처리방침과 API 약관</strong>에 따라 처리하며, 이는 저희가 통제할 수 없습니다. 예를 들어 Gemini API의 무료 등급에서는 Google이 제출된 내용을 제품 개선에 사용할 수 있습니다. 자세한 내용은 각 제공자의 정책을 확인해 주세요.</p>
+<ul>
+<li>Google Gemini API — 개인정보처리방침: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> · Gemini API 추가 약관: <a href="https://ai.google.dev/gemini-api/terms">https://ai.google.dev/gemini-api/terms</a></li>
+<li>OpenAI API — 개인정보처리방침: <a href="https://openai.com/policies/privacy-policy/">https://openai.com/policies/privacy-policy/</a> · API 데이터 처리: <a href="https://platform.openai.com/docs/guides/your-data">https://platform.openai.com/docs/guides/your-data</a></li>
+</ul>
+
+<h2>iOS에서만 있는 선택지 (Apple)</h2>
+<ul>
+<li><strong>Apple 번역(기기 내)</strong> — Apple의 Translation 프레임워크로 단어 뜻을 기기 안에서 만듭니다. API 키가 필요 없고, 페이지 텍스트를 저희나 AI 제공자에게 보내지 않습니다. (언어 데이터를 처음 받을 때 iOS가 Apple에서 내려받을 수 있습니다.)</li>
+<li><strong>Apple Private Cloud Compute</strong> — 이 선택지를 고르면 페이지 텍스트와 후보 단어가 Apple의 Private Cloud Compute로 전송되어 처리됩니다. Apple은 이 데이터를 요청 처리에만 사용하고 보관하지 않으며 Apple도 열람할 수 없도록 설계했다고 밝히고 있습니다. 저희는 그 내용을 받지 않습니다. 참고: <a href="https://security.apple.com/blog/private-cloud-compute/">https://security.apple.com/blog/private-cloud-compute/</a> · Apple 개인정보 처리방침: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></li>
+</ul>
+
+<h2>Google ML Kit의 진단 정보 (Android)</h2>
+<p>Android 앱에 포함된 Google ML Kit 글자 인식 라이브러리는 Google에 기능의 성능·사용 현황에 관한 진단 정보를 보낼 수 있습니다. Google의 설명에 따르면 여기에는 기기 정보(제조사·모델·OS 버전, ML 가속기), 앱 패키지 이름과 버전, 성능 지표·오류 코드·입출력 크기, 그리고 사용자나 기기를 고유하게 식별하기 위한 것이 아닌 설치별 식별자가 포함되며, HTTPS로 암호화되어 전송되고 다른 제3자에게 넘겨지지 않습니다. <strong>사진이나 인식된 글자는 여기에 포함되지 않습니다.</strong> 자세한 내용: <a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></p>
+
+<h2>저희가 <strong>하지 않는</strong> 것</h2>
+<ul>
+<li>사진·페이지 텍스트·API 키를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>. 저희는 서버를 운영하지 않습니다.</li>
+<li>사용자 계정이 <strong>없습니다</strong>. 로그인도 회원가입도 없습니다.</li>
+<li>광고를 보여 주지 <strong>않으며</strong> 광고 SDK가 없습니다.</li>
+<li>저희가 넣은 분석(애널리틱스)·오류 보고 SDK가 <strong>없습니다</strong>. (위의 ML Kit 진단 정보는 예외로 설명했습니다.)</li>
+<li>광고 ID·위치·연락처를 읽지 <strong>않으며</strong>, 앱이나 웹사이트를 넘나들며 여러분을 추적하지 <strong>않습니다</strong>.</li>
+<li>앱 내 결제가 <strong>없습니다</strong>.</li>
+</ul>
+
+<h2>권한</h2>
+<ul>
+<li><strong>카메라</strong> — 책 페이지를 촬영하기 위해서만 사용합니다. 거부해도 기존 사진을 골라 쓸 수 있습니다.</li>
+<li><strong>사진 선택</strong> — 기존 사진을 고를 때는 시스템 사진 선택기(Android Photo Picker, iOS PhotosPicker)를 사용하므로, 여러분이 고른 사진 한 장에만 접근하며 사진 보관함 전체에 접근하지 않습니다.</li>
+<li><strong>인터넷</strong> — 선택한 AI 제공자의 API를 호출하기 위해 사용합니다.</li>
+</ul>
+
+<h2>아동</h2>
+<p>이 앱은 13세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 알면서 수집하지 않습니다.</p>
+
+<h2>데이터 삭제와 여러분의 선택</h2>
+<ul>
+<li>설정에서 <strong>&quot;Remove Key&quot;</strong>로 저장된 API 키를 언제든 지울 수 있습니다.</li>
+<li>설정에서 <strong>&quot;Clear Diagnostics&quot;</strong>로 진단 기록을 지울 수 있습니다.</li>
+<li>앱을 삭제하면 기기에 저장된 모든 데이터(API 키, 설정, 진단 기록)가 삭제됩니다.</li>
+<li>저희 서버에 보관되는 데이터가 없으므로 저희에게 삭제를 요청할 데이터가 없습니다. Gemini·OpenAI로 전송된 데이터는 각 제공자의 정책과 여러분의 해당 계정 설정에 따릅니다. 발급한 API 키는 Google AI Studio 또는 OpenAI 대시보드에서 폐기할 수 있습니다.</li>
+</ul>
+
+<h2>변경</h2>
+<p>이 방침이 바뀌면 위의 &quot;최종 수정일&quot;이 함께 바뀝니다.</p>
+
+<h2>문의</h2>
+<p>1XP Inc. · <a href="mailto:developer@1xp.com">developer@1xp.com</a></p>
+
+<hr>
+
+<h1>Privacy Policy — Minogami</h1>
+<p><em>Last updated: 2026-11-15 · Applies to: Minogami for Android and Minogami for iOS</em></p>
+<p>Minogami (&quot;the App&quot;) helps you read English books. You photograph a page; the App reads the text on your device, picks hard words, idioms and grammar points for your reading level, and shows short meanings as highlighter marks and notes on the photo.</p>
+<p>The short version: <strong>we run no servers, and there are no accounts, ads or analytics.</strong> Photos never leave your device. Only the <strong>text</strong> read from the page is sent, directly, to the AI provider you choose (Google Gemini API or OpenAI API), using <strong>your own API key</strong>.</p>
+<h2>Who we are</h2>
+<p>The App is made by 1XP Inc. We operate no backend server that receives your content, and there is no account system.</p>
+<h2>What stays on your device</h2>
+<ul>
+<li><strong>Your API keys (Gemini, OpenAI)</strong> — on Android encrypted with AES-GCM under an Android Keystore key in app-private storage; on iOS in the Keychain. A key is sent only to its own provider, when calling that provider's API.</li>
+<li><strong>Settings</strong> — reading level, definition language, selected provider and model.</li>
+<li><strong>Diagnostics log</strong> — timing and failure details per page (never the API key). It leaves the device only if you tap &quot;Export Diagnostics&quot; and choose where to share it. You can clear it in Settings.</li>
+</ul>
+<p>Photos you take or pick are used <strong>in memory only</strong> while the page is analysed; the App does not save them to files or send them anywhere. Uninstalling the App removes everything above.</p>
+<h2>What is processed only on your device</h2>
+<ul>
+<li><strong>Text recognition (OCR)</strong> — Google ML Kit's bundled model on Android, Apple's Vision framework on iOS.</li>
+<li><strong>Word difficulty</strong> — a word-grade dataset bundled with the App.</li>
+</ul>
+<h2>What is sent to the AI provider (Gemini or OpenAI)</h2>
+<p>To write meanings, idioms and grammar notes, the App sends the following to the <strong>one provider</strong> you selected, authenticated with <strong>your own API key</strong>, over a direct HTTPS connection that does not pass through us:</p>
+<ul>
+<li>the <strong>sentences</strong> read from the page and the <strong>candidate words</strong> (with the sentence each appeared in);</li>
+<li>your <strong>reading level</strong> and <strong>definition language</strong> (as part of the request text).</li>
+</ul>
+<p>The <strong>photo itself is never sent</strong>, and no personal information such as name, e-mail or location is sent. Whatever text is printed on the page is sent as-is, so avoid photographing pages with private notes or sensitive content.</p>
+<p>Each provider processes this data under <strong>its own privacy policy and API terms</strong>, which we do not control. For example, on the Gemini API's unpaid tier Google may use submitted content to improve its products.</p>
+<ul>
+<li>Google Gemini API — <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> · <a href="https://ai.google.dev/gemini-api/terms">https://ai.google.dev/gemini-api/terms</a></li>
+<li>OpenAI API — <a href="https://openai.com/policies/privacy-policy/">https://openai.com/policies/privacy-policy/</a> · <a href="https://platform.openai.com/docs/guides/your-data">https://platform.openai.com/docs/guides/your-data</a></li>
+</ul>
+<h2>iOS-only options (Apple)</h2>
+<ul>
+<li><strong>Apple Translation (on device)</strong> — meanings are produced on the device by Apple's Translation framework; no API key, and page text is not sent to us or to an AI provider (iOS may download language data from Apple the first time).</li>
+<li><strong>Apple Private Cloud Compute</strong> — when selected, the page text and candidate words are sent to Apple's Private Cloud Compute for processing. Apple states this data is used only to fulfil the request, is not retained, and is not accessible to Apple. We never receive it. See <a href="https://security.apple.com/blog/private-cloud-compute/">https://security.apple.com/blog/private-cloud-compute/</a> and <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>.</li>
+</ul>
+<h2>Google ML Kit diagnostics (Android)</h2>
+<p>The Google ML Kit text-recognition library bundled in the Android app may send Google diagnostics about the feature's performance and usage. According to Google this includes device information (manufacturer, model, OS version, ML accelerators), the app's package name and version, performance metrics, error codes and input/output sizes, and a per-installation identifier not intended to identify a user or device; it is encrypted in transit (HTTPS) and not transferred to other third parties. <strong>Photos and recognised text are not included.</strong> Details: <a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></p>
+<h2>What we do NOT do</h2>
+<ul>
+<li>We do <strong>not</strong> collect, store or receive your photos, page text or API keys. We run no servers.</li>
+<li>There are <strong>no</strong> user accounts, <strong>no</strong> ads or ad SDKs, and <strong>no</strong> analytics or crash-reporting SDK added by us (ML Kit's own diagnostics are described above).</li>
+<li>We do <strong>not</strong> read advertising IDs, location or contacts, and do <strong>not</strong> track you across apps or websites. There are no in-app purchases.</li>
+</ul>
+<h2>Permissions</h2>
+<ul>
+<li><strong>Camera</strong> — only to photograph book pages. If you decline, you can still pick an existing photo.</li>
+<li><strong>Photo picking</strong> — through the system photo picker (Android Photo Picker, iOS PhotosPicker), so the App sees only the photo you pick, not your library.</li>
+<li><strong>Internet</strong> — to call the selected AI provider's API.</li>
+</ul>
+<h2>Children</h2>
+<p>The App is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+<h2>Deleting data and your choices</h2>
+<ul>
+<li>Remove a saved API key at any time in Settings (&quot;Remove Key&quot;); clear the diagnostics log with &quot;Clear Diagnostics&quot;.</li>
+<li>Uninstalling the App deletes everything stored on the device.</li>
+<li>We hold no data on any server, so there is nothing for us to delete on request. Data sent to Gemini or OpenAI is governed by that provider's policies and your account settings there; you can revoke your API key in Google AI Studio or the OpenAI dashboard.</li>
+</ul>
+<h2>Changes</h2>
+<p>If this policy changes, the &quot;Last updated&quot; date above changes with it.</p>
+<h2>Contact</h2>
+<p>1XP Inc. · <a href="mailto:developer@1xp.com">developer@1xp.com</a></p>
+</body>
+</html>
